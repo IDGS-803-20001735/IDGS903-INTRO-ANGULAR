@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="" class="form-label">Número 1</label>
+        <input type="number" name="num1" placeholder="NÚMERO 1" class="form-control" [(ngModel)]="num1">
+      </div>
+      <div class="mb-3">
+        <label for="" class="form-label">Número 2</label>
+        <input type="number" name="num2" placeholder="NÚMERO 2" class="form-control" [(ngModel)]="num2">
+      </div>
+      <div class="mb-3">
+        <ul>
+          <li><input type="radio" name="operacion" value="sum" [(ngModel)]="operacion"><label for="sum">SUMAR</label>
+          </li>
+          <li><input type="radio" name="operacion" value="res" [(ngModel)]="operacion"><label for="res">RESTAR</label>
+          </li>
+          <li><input type="radio" name="operacion" value="mul" [(ngModel)]="operacion"><label
+              for="mul">MULTIPLICAR</label></li>
+          <li><input type="radio" name="operacion" value="div" [(ngModel)]="operacion"><label for="div">DIVIDIR</label>
+          </li>
+        </ul>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-outline-dark" (click)="operacionesBasicas()">CALCULAR</button>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h2 class="text-danger">RESULTADO: {{ resultado }}</h2>
+    </div>
+  </div>
+</div>

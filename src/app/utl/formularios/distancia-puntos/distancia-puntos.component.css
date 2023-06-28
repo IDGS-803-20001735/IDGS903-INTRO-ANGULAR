@@ -1,0 +1,54 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+.container {
+  width: 75vw;
+  display: flex;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rem;
+}
+
+.form,
+.result {
+  width: 50%;
+  text-align: center;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.row > mat-form-field {
+  width: 50%;
+}
+
+mat-form-field {
+  border: none;
+}
+
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: darkblue;
+}
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+b {
+  color: tomato;
+}

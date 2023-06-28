@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-lg-6">
+    <div class="mb-3">
+      <h1 class="text-center">CALCULO DE RESISTENCIA</h1>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">BANDA 1</label>
+      <select class="form-select text-center" [(ngModel)]="banda1">
+        <option *ngFor="let color of colorBandas" [value]="color.valor">{{ color.color }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">BANDA 2</label>
+      <select class="form-select text-center" [(ngModel)]="banda2">
+        <option *ngFor="let color of colorBandas" [value]="color.valor">{{ color.color }}</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">BANDA 3</label>
+      <select class="form-select text-center" [(ngModel)]="banda3">
+        <option *ngFor="let color of colorBandas" [value]="color.valor">{{ color.color }}</option>
+      </select>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="tolerancia" value="0.05" [(ngModel)]="tolerancia">
+      <label class="form-check-label" for="flexRadioDefault1">
+        DORADO
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="tolerancia" value="0.1" [(ngModel)]="tolerancia">
+      <label class="form-check-label" for="flexRadioDefault2">
+        PLATEADO
+      </label>
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-outline-info">CALCULAR</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">BANDA1</th>
+          <th scope="col">BANDA2</th>
+          <th scope="col">BANDA3</th>
+          <th scope="col">TOLERANCIA</th>
+          <th scope="col">VALOR</th>
+          <th scope="col">MAXIMO</th>
+          <th scope="col">MINIMO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td [style.background-color]="color1">{{ color1 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
