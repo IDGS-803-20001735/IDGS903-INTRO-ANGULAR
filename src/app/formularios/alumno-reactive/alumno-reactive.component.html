@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-6">
+    <form [formGroup]="alumnoForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="matricula" class="from-label">Matricula</label>
+        <input type="number" name="matricula" id="matricula" class="form-control" formControlName="matricula" required>
+        <div *ngIf="alumnoForm.get('matricula')?.touched && alumnoForm.get('matricula')?.errors?.['required']"
+          class="alert alert-danger">Error
+          campo requirido</div>
+      </div>
+      <div class="mb-4">
+        <label for="nombre" class="from-label">Nombre</label>
+        <input type="text" name="nombre" id="nombre" class="form-control" formControlName="nombre" required>
+        <div *ngIf="alumnoForm.get('matricula')?.touched && alumnoForm.get('matricula')?.errors?.['minlength']"
+          class="alert alert-danger">El campo es mayor {{
+          alumnoForm.get('nombre')?.errors?.['minlength']?.requiredLength }} caracteres</div>
+      </div>
+      <div class="mb-4">
+        <label for="edad" class="from-label">Edad</label>
+        <input type="number" name="edad" id="edad" class="form-control" formControlName="edad">
+      </div>
+      <div class="mb-4">
+        <label for="correo" class="from-label">Correo</label>
+        <input type="email" name="correo" id="correo" class="form-control" formControlName="correo">
+      </div>
+      <div class="mb-4">
+        <label for="pago" class="from-label">Pago</label>
+        <input type="number" name="pago" id="pago" class="form-control" formControlName="pago">
+      </div>
+      <div class="mb-4">
+        <label for="foto" class="from-label">Foto</label>
+        <input type="text" name="foto" id="foto" class="form-control" formControlName="foto">
+      </div>
+      <div class="mb-4">
+        <label for="calif" class="from-label">Calificación</label>
+        <input type="number" name="calif" id="calif" class="form-control" formControlName="calif">
+      </div>
+      <div class="d-grid gap-2 col-4 float-end">
+        <button class="btn btn-info btn-lg" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="col-6">
+    <table class="table table-responsive">
+      <thead>
+        <th>Matricula</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Correo</th>
+        <th>Pago</th>
+        <th>Foto</th>
+        <th>Calificación</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let value of alumnosGuardados">
+          <td>{{ value.matricula }}</td>
+          <td>{{ value.nombre }}</td>
+          <td>{{ value.edad }}</td>
+          <td>{{ value.correo }}</td>
+          <td>{{ value.pago }}</td>
+          <td>{{ value.foto }}</td>
+          <td>{{ value.calif }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

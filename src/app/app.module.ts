@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { idgsComponent } from './utl/idgs.component';
 import { ievnComponent } from './utl/ievn.component';
 import { IrdComponent } from './utl/ird/ird.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SumaComponent } from './utl/formularios/suma/suma.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperasModule } from './utl/formularios/operas/operas.module';
@@ -13,6 +13,8 @@ import { DistanciaModule } from './utl/formularios/distancia/distancia.module';
 import { ResistenciaComponent } from './utl/formularios/resistencia/resistencia.component';
 import { MenuComponent } from './utl/menu/menu.component';
 import { AlumnosFilterPipe } from './utl/alumnos-filter.pipe';
+import { AlumnoReactiveComponent } from './formularios/alumno-reactive/alumno-reactive.component';
+import { AppRoutingModule } from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { AlumnosFilterPipe } from './utl/alumnos-filter.pipe';
     ResistenciaComponent,
     MenuComponent,
     AlumnosFilterPipe,
+    AlumnoReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +34,8 @@ import { AlumnosFilterPipe } from './utl/alumnos-filter.pipe';
     BrowserAnimationsModule,
     OperasModule,
     DistanciaModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
